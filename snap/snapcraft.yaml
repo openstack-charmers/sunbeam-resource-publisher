@@ -8,11 +8,15 @@ description: |
 grade: devel
 confinement: strict
 
+apps:
+  sunbeam-resource-publisher:
+    command: bin/sunbeam-resource-publisher
+
 parts:
   core:
     plugin: python
     source: .
-    requirements:
+    python-requirements:
       - requirements.txt
     build-packages:
       - libffi-dev
@@ -27,5 +31,3 @@ parts:
     build-environment:
       - LDFLAGS: -L/usr/lib/python3.10
       - CPPFLAGS: -I/usr/include/python3.10
-        
-    
