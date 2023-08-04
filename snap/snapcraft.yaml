@@ -9,8 +9,8 @@ grade: devel
 confinement: strict
 
 apps:
-  sunbeam-resource-publisher:
-    command: bin/sunbeam-resource-publisher
+  sunbeam-upload-resources:
+    command: bin/sunbeam-upload-resources
 
 parts:
   core:
