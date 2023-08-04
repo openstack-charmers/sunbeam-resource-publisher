@@ -1,5 +1,6 @@
 """Upload resource pointers for a charm on the charmhub."""
 
+import click
 import json
 import yaml
 import tempfile
@@ -23,7 +24,8 @@ def charm_metadata() -> dict:
             return yaml.safe_load(f)
 
 
-def upload_resources():
+@click.command()
+def main():
     """Upload all resources identitied in charm metadata as OCI references."""
     emit.init(
         EmitterMode.BRIEF,
@@ -67,4 +69,4 @@ def upload_resources():
 
 
 if __name__ == "__main__":
-    upload_resources()
+    main()

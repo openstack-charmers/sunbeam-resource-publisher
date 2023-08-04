@@ -51,3 +51,4 @@ typing_extensions==4.7.1
 urllib3==1.26.16
 wrapt==1.15.0
 zipp==3.16.2
+click

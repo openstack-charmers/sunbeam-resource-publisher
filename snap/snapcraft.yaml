@@ -1,0 +1,31 @@
+name: sunbeam-resource-publisher
+base: core22
+version: '0.1'
+summary: Publication of resources to the Charmhub
+description: |
+  Simple helper to upload resources to the charmhub for Sunbeam charms
+
+grade: devel
+confinement: strict
+
+parts:
+  core:
+    plugin: python
+    source: .
+    requirements:
+      - requirements.txt
+    build-packages:
+      - libffi-dev
+      - libapt-pkg-dev
+      - libssl-dev
+      - git
+    stage-packages:
+      - git
+      - apt
+      - apt-utils
+    python-packages: [wheel]
+    build-environment:
+      - LDFLAGS: -L/usr/lib/python3.10
+      - CPPFLAGS: -I/usr/include/python3.10
+        
+    

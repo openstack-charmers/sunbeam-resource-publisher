@@ -1,2 +1,4 @@
 revisions.json
 metadata.yaml
+build
+*.egg-info
